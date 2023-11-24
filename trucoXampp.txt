@@ -1,0 +1,4 @@
+C:\xampp\htdocs> mklink /d javascript "C:\Users\Buhardilla\OneDrive\Documentos\2º DAW 2023 2024\Cliente\Javascript"
+
+si da error, usar Documents en vez de Documentos
+usar la url de xampp, no donde esta encontrado el archivo
