@@ -1,0 +1,9 @@
+<p>listado-reyes-magos works!</p>
+<ul>
+  @for (rey of getReyesMagos() ; track rey.nombre) {
+    <!--  <li>{{rey.nombre}}</li> -->
+    <app-rey-mago [reyMago]="rey"></app-rey-mago>
+  }
+</ul>
+<button (click)="mostrarArray()">Mostrar array</button>
+
