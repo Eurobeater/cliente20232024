@@ -1,8 +1,0 @@
-<h2>Fabricantes</h2>
-
-<ul>
-  @for (unFabricante of getFabricantes(); track unFabricante.id) {    <!-- Con la forma nueva de hacer ngFor, tiene que trackear la propiedad id del objeto o array -->
-   <app-fabricante [fabricante] = "unFabricante"></app-fabricante>         <!-- El paréntesis de [fab] se usa para indicar que va a ser una variable -->
-  }
-
-</ul>
