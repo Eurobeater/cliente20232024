@@ -1,0 +1,8 @@
+<p>listado works!</p>
+
+<ul>
+  <li *ngFor="let luchador of getLuchadores()">
+    {{luchador.name}} <span *ngIf="luchador.death">☠</span>
+    {{luchador.name}} <span> @if(luchador.death){☠}</span>
+  </li>
+</ul>
