@@ -1,0 +1,61 @@
+<h2>Componente 1</h2>
+
+<br>
+
+<h5>Tipos de datos</h5>
+
+<div>Texto: {{texto}}</div>
+<div>Número: {{numero}}</div>
+<div>Array numérico: {{arrayNumerico}}</div>
+<div>Array de textos: {{arrayTextos}}</div>
+
+<br>
+
+<h5>Array de objetos usando for</h5>
+
+<table class="table-sm table-bordered">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>Edad</th>
+  </tr>
+  @for (persona of arrayObjetos; track $index) {
+    <tr>
+      <td>{{persona.name}}</td>
+      <td>{{persona.surname}}</td>
+      <td>{{persona.age}}</td>
+    </tr>
+  }
+</table>
+
+<br>
+
+<h5>Array de objetos usando for llamando a una función</h5>
+
+<table class="table-sm table-bordered">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>Edad</th>
+  </tr>
+  @for (persona of arrayObjetos; track $index) {
+    <tr>
+      <td>{{persona.name}}</td>
+      <td>{{persona.surname}}</td>
+      <td>{{persona.age}}</td>
+    </tr>
+  }
+</table>
+
+<br>
+
+<h5>Paso de parámetros a una función</h5>
+<div>
+  {{pasarNumero(5)}}
+</div>
+
+<br>
+
+<h5>Hastag</h5>
+<div #divHastag>#divHastag</div>
+<div>Contenido del {{divHastag.textContent}}</div>

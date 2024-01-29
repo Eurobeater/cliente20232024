@@ -1,0 +1,32 @@
+<h2>Componente 3</h2>
+<br>
+<h5>Herencia</h5>
+<div style="font-size: larger;">Se repite con un for el Componente 4 y este hereda el Componente 3</div>
+<br>
+<ul class="list-group">
+  @for (persona of arrayObjetos; track $index) {
+    <li class="list-group-item"><app-componente4 [persona] = "persona"></app-componente4></li>    <!-- se crea un property binding con la propiedad llamada 'persona', que equivale a persona (la iteración de arrayObjetos()) -->
+  }
+</ul>
+<br>
+<h5>Servicios</h5>
+<div style="font-size: larger;">Lista el array de ciudades que hay en el servicio</div>
+<br>
+<ul class="list-group">
+  @for (ciudad of getCiudades(); track $index) {            <!-- llama a la función getCiudades() del componente 3. LEER EL COMENTARIO DEL TS DEL COMPONENTE 3 -->
+    <li class="list-group-item">{{ciudad}}</li>
+  }
+</ul>
+<br>
+<div style="font-size: larger;">Añadir y eliminar elementos del array de ciudades con el servicio</div>
+<br>
+<ul class="list-group">
+  @for (ciudad of getCiudades(); track $index) {
+    <li class="list-group-item">{{ciudad}} <button class="btn btn-danger" (click)="remCiudad($index)">Borrar</button></li>
+  }
+</ul>
+  <br>
+<div>
+  <div><input type="text" #inputAgregarCiudad class="form-control" placeholder="Agregar ciudad"></div>
+  <button class="btn btn-primary" (click)="addCiudad(inputAgregarCiudad.value)">Agregar</button>
+</div>

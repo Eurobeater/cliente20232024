@@ -1,0 +1,26 @@
+<h2>Componente 2</h2>
+
+<br>
+
+<h5>Property binding</h5>
+
+<button [disabled] = "habilitacionBoton" class="btn btn-primary">Botón</button>
+
+<br><br>
+
+<h5>Event binding</h5>
+
+<button (click)="mostrarAlert()" class="btn btn-primary">Botón</button>
+<br>
+<button (click)="mostrarAlertParametro('Pasando texto por parámetro')" class="btn btn-primary">Botón</button>
+<br><br>
+
+<h5>Two way binding</h5>
+<div>Introduce nombre de empresa</div>
+<input type="text" class="form-control" [(ngModel)]= "empresa">
+
+<br><br>
+
+<div>Nombre de empresa:
+  <p>{{empresa}}</p>
+</div>
