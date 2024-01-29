@@ -1,0 +1,21 @@
+<div class="row row-cols-md-5">
+  <div>
+      <img class="img-thumbnail float-start" src='{{articulo.imagen}}'>
+
+      <!-- NOMBRE -->{{articulo.nombre}}
+  </div>
+  <div><!-- PRECIO-->{{articulo.precio | currency:" "}} €</div>
+  <div>
+    <button class="btn btn-danger" disabled>Quitar unidad</button>
+    <button class="btn btn-primary">Añadir unidad</button>
+    <input type="form form-control" placeholder="Unidades">
+  <!-- BOTÓN PARA DECREMENTAR UNIDADES SI HAY MÁS DE 1 -->
+  <!-- INPUT NO EDITABLE PARA MOSTRAR UNIDADES -->
+  <!-- BOTÓN PARA INCREMENTAR UNIDADES -->
+  </div>
+  <div>SUBTOTAL DE ESE ARTÍCULO</div>
+  <div>
+    <button class="btn btn-danger" (click)="quitarCarrito(articulo.index)">Quitar del carrito</button>     <!-- si uso {{articulo.id}}, el ultimo elemento del array del carrito no se borra -->
+  <!-- BOTÓN PARA ELIMINAR ESE ARTÍCULO DEL CARRITO -->
+  </div>
+</div>
