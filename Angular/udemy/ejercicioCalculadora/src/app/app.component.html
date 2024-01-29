@@ -1,0 +1,18 @@
+<div class="container">
+  <div>
+    <h1>Aplicación de Calculadora</h1>
+    <label for="">Operando A</label> <br>
+    <input type="number" class="form-control" placeholder="Escribe operando A" [(ngModel)]="operandoA">
+  </div>
+  <div>
+    <label for="">Operando B</label> <br>
+    <input type="number" class="form-control" placeholder="Escribe operando B" [(ngModel)]="operandoB">
+  </div>
+  <br>
+  <div>
+    <button class="btn btn-primary" (click)="sumarOperandos()">Sumar</button>
+  </div>
+  <div>
+    <p>Resultado: {{ suma }}</p>
+  </div>
+</div>
