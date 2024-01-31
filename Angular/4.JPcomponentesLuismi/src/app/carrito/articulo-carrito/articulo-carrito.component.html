@@ -1,0 +1,18 @@
+<div class="row row-cols-md-5">
+  <div>
+      <img class="img-thumbnail float-start" src="{{art.imagen}}">
+      {{art.nombre}}
+  </div>
+  <div>{{art.precio | currency:" "}} €</div>
+  <div>
+    <div class="input-group mb-3">
+      <button (click)="decrUnid()" class="btn btn-outline-secondary" type="button">-</button>
+      <input type="text" class="form-control" value="{{art.unidades}}">
+      <button (click)="incrUnid()" class="btn btn-outline-secondary" type="button">+</button>
+    </div>
+  </div>
+  <div>{{art.precio * art.unidades | currency:" "}} €</div>
+  <div>
+    <button (click)="borrarArticulo()" class="btn btn-warning">Eliminar</button>
+  </div>
+</div>
