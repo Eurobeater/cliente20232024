@@ -1,0 +1,16 @@
+@for (articulo of getArticulos(); track $index) {
+  <div class="card text-center bg-light mb-2 mr-2">
+    <a>
+        <img [src]="articulo.imagen" class="card-img-top">
+    </a>
+    <div class="card-body">
+        <h5 class="card-title">{{articulo.nombre}}</h5>
+        <p class="card-text">{{articulo.precio | currency:" " }}  €</p>
+        @if (articulo.stock) {
+          <button class="btn btn-primary">Al carrito</button>
+        } @else {
+          <button class="btn btn-danger" disabled>Sin stock</button>
+        }
+    </div>
+  </div>
+}
