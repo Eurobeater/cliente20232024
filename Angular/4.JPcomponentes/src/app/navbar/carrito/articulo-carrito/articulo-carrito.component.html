@@ -1,0 +1,23 @@
+<div class="row row-cols-md-5">
+  <div>
+      <img class="img-thumbnail float-start" src='{{articulo.imagen}}'>
+
+      <!-- NOMBRE -->{{articulo.nombre}}
+  </div>
+  <div><!-- PRECIO-->{{articulo.precio | currency:" "}} €</div>
+
+  <div class="input-group mb-3">
+    <button class="btn btn-outline-secondary" type="button" (click)="decUnidades()">-</button>
+    <input type="text" class="form form-control" placeholder="Unidades" aria-label="Recipient's username" aria-describedby="button-addon2" [(ngModel)]="unidades" value="{{unidades}}">
+    <button class="btn btn-outline-secondary" type="button" (click)="addUnidades()">+</button>
+
+  <!-- BOTÓN PARA DECREMENTAR UNIDADES SI HAY MÁS DE 1 -->
+  <!-- INPUT NO EDITABLE PARA MOSTRAR UNIDADES -->
+  <!-- BOTÓN PARA INCREMENTAR UNIDADES -->
+  </div>
+  <div>SUBTOTAL DE ESE ARTÍCULO</div>
+  <div>
+    <button class="btn btn-danger" (click)="quitarCarrito(articulo.index)">X</button>     <!-- si uso {{articulo.id}}, el ultimo elemento del array del carrito no se borra -->
+  <!-- BOTÓN PARA ELIMINAR ESE ARTÍCULO DEL CARRITO -->
+  </div>
+</div>
