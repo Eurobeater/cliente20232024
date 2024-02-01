@@ -1,0 +1,55 @@
+<h3>Buscar</h3>
+
+<div class="row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="categoriesNav">
+            <ul class="navbar-nav">
+              @for (cat of getCategorias(); track cat.id) {
+                <li class="nav-item">
+                    <a (click)="setCategoria(cat.id)" class="nav-link"><!-- Procesadores -->{{cat.nombre}}</a>
+                </li>
+              }
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="manufacturersNav">
+            <ul class="navbar-nav">
+              @for (fab of getFabricantes(); track fab.id) {
+                <li class="nav-item">
+                    <a (click)="setFabricante(fab.id)" class="nav-link"><!-- AMD --> {{fab.nombre}}</a>
+                </li>
+              }
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="row">
+    <div class="input-group mb-3">
+        <input [(ngModel)]="patron" type="text" class="form-control" placeholder="Buscar por nombre"
+                aria-label="Buscar por nombre" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="button">
+                Buscar
+            </button>
+        </div>
+    </div>
+</div>
+
+<ng-container>
+    <div class="row">
+        <h5>Resultados de búsqueda</h5>
+    </div>
+    <div class="row">
+        <div class="row row-cols-md-5">
+            <!-- AQUÍ VA UNA REPETICIÓN DE LLAMADAS AL COMPONENTE ARTICULO -->
+            @for (articulo of getArticulos() | filtroPatron:patron | filtroFab:fab | filtroCat:cat ; track articulo.id) {
+              <app-articulo [articulo] = "articulo"></app-articulo>
+            }
+        </div>
+    </div>
+</ng-container>
