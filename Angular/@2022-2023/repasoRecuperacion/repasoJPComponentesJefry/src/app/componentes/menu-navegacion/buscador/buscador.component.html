@@ -1,0 +1,59 @@
+<h3>Buscar</h3>
+
+<div class="row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="categoriesNav">
+            <ul class="navbar-nav">
+                <li *ngFor="let c of lista" class="nav-item">
+                    <a [ngClass]="{'active':filtroCat == c.id}" class="nav-link" (click)="filtroCat=c.id">{{c.nombre}} class="nav-link">
+                       <!-- Procesadores -->
+                       {{c.nombre}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="manufacturersNav">
+             <ul class="navbar-nav">
+                  <!-- <li *ngFor="let f of getFabricantes()" class="nav-item">
+                    <a [ngClass]="{'active':filtroFab == f.id}" class="nav-link" (click)="filtroFab=f.id" class="nav-link"> 
+                        AMD 
+                       {{f.nombre}}
+                    </a>
+                </li>-->
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="row">
+    <div class="input-group mb-3">
+        <input #buscador type="text" (keyup)="filtroNom = buscador.value.trim()" class="form-control" placeholder="Buscar por nombre"
+                aria-label="Buscar por nombre" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+        </div>
+    </div>
+</div>
+
+<ng-container>
+    <div class="row">
+        <h5>Resultados de búsqueda</h5>
+    </div>
+    <div class="row">
+        <div class="row row-cols-md-5">
+            <!-- AQUÍ VA UNA REPETICIÓN DE LLAMADAS AL COMPONENTE ARTICULO -->
+            <app-articulo>
+                *ngFor="let a of getArticulos()
+              | pipeCat:filtroCat
+              | pipeFab:filtroFab
+              |pipeNom:filtroNom "
+              [articulo]="a">
+            </app-articulo>
+        </div>
+    </div>
+</ng-container>
