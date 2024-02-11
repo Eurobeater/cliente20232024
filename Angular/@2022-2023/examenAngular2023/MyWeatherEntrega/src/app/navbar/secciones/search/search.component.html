@@ -1,0 +1,17 @@
+<h2>Search cities</h2>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" required placeholder="Write the name of a city" [(ngModel)]="buscarCiudad">
+  <button class="btn btn-primary" type="button" id="button-addon2" (click)="buscar()">Search</button>
+</div>
+
+<ul class="list-group">
+	<!-- RESULTADOS DE BUSQUEDA EN FORMA DE LI COMO EL DE ABAJO -->
+	<li class="list-group-item" *ngFor="let resultado of resultados">
+    {{ resultado.name }}, {{ resultado.sys.country }}
+		<!-- AQUI VA EL NOMBRE Y EL PAIS O CODIGO DE PAIS -->
+		<!-- AQUÍ VA EL BOTON DE HACER FAVORITA -->
+
+    <button class="btn btn-primary" type="button" (click)="guardarFavorita(resultado)">Guardar como favorita</button>
+
+	</li>
+</ul>
