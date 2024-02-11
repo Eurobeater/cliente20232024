@@ -1,0 +1,8 @@
+<div class="container">
+<h1 class="mb-2">Favoritos</h1>
+<h1 *ngIf="favoritos==null">No hay ninguna pelicula en favoritos</h1>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+<app-favorito [favoritos]="favorito" *ngFor="let favorito of getFavoritos()"></app-favorito>
+</div>
+</div>

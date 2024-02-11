@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-7">
+        <dl>
+            <dt>Título</dt>
+            <dd>{{pelicula.Title}}</dd>
+        </dl>
+        <dl>
+            <dt>Año</dt>
+            <dd>{{pelicula.Year}}</dd>
+        </dl>
+        <dl>
+            <dt>Duración</dt>
+            <dd>{{pelicula.Runtime}}</dd>
+        </dl>
+        <dl>
+            <dt>Géneros</dt>
+            <dd>{{pelicula.Genre}}</dd>
+        </dl>
+        <dl>
+            <dt>Dirección</dt>
+            <dd>{{pelicula.Director}}</dd>
+        </dl>
+        <dl>
+            <dt>Reparto</dt>
+            <dd>{{pelicula.Actors}}</dd>
+        </dl>
+        <dl>
+            <dt>Sinopsis</dt>
+            <dd>{{pelicula.Plot}}</dd>
+        </dl>
+        <dl>
+            <dt>País</dt>
+            <dd>{{pelicula.Country}}</dd>
+        </dl>
+        <dl>
+            <dt>Enlace a IMDB</dt>
+            <dd><a href="enlace_a_la_peli_en_IMDB" target="_blank">titulo_de_la_pelicula en IMDB</a></dd>
+        </dl>
+        <dl>
+            <dt>Puntuación de IMDB</dt>
+            <dd>{{pelicula.imdbRating}}</dd>
+        </dl>
+        
+        <p>
+            <button type="button" class="btn btn-primary"(click)="volverFav()">Volver a Favoritos</button>
+        </p>
+    </div>
+    <div class="col-5">
+        <img [src]="pelicula.Poster" class="card-img-top">
+    </div>
+</div>
