@@ -1,0 +1,16 @@
+<h3>Carrito</h3>
+
+<div class="row row-cols-md-1">
+    <app-articulo-carrito
+      [articulo]="art"
+      *ngFor="let art of getCart()">
+    </app-articulo-carrito>
+
+    <div class="row row-cols-md-5 cartPrice">
+        <div></div>
+        <div></div>
+        <div>Total:</div>
+        <div>AQUÍ VA EL TOTAL DEL PRECIO DEL CARRITO</div>
+        <div></div>
+    </div>
+</div>

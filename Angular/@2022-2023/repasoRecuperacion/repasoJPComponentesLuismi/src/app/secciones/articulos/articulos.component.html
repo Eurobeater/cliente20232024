@@ -1,0 +1,40 @@
+<div class="row">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="categoriesNav">
+          <ul class="navbar-nav">
+              <li *ngFor="let c of getCategorias()" class="nav-item">
+                  <a class="nav-link" (click)="filtroCat=c.id">{{c.nombre}}</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+</div>
+
+<div class="row">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="categoriesNav">
+          <ul class="navbar-nav">
+              <li *ngFor="let f of getFabricantes()" class="nav-item">
+                  <a class="nav-link" (click)="filtroFab=f.id">{{f.nombre}}</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Buscar por nombre..." aria-label="Buscar por nombre..." aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+</div>
+
+<!-- <ng-container> -->
+  <!-- <div class="row"> -->
+      <div class="row row-cols-md-5">
+          <app-articulo-tarjeta
+              *ngFor="let a of getArticulos() | pipeCat:filtroCat "
+              [articulo]="a">
+
+          </app-articulo-tarjeta>
+      </div>
+  <!-- </div> -->
+<!-- </ng-container> -->
