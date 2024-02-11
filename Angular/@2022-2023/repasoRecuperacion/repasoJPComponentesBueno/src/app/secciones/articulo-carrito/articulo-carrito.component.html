@@ -1,0 +1,20 @@
+<div class="row row-cols-md-5">
+  <div>
+      <img class="img-thumbnail float-start" src="{{articulo.imagen}}">
+      {{articulo.nombre}}
+  </div>
+  <div>{{articulo.precio}} €</div>
+  <div>
+  <!-- BOTÓN PARA DECREMENTAR UNIDADES SI HAY MÁS DE 1 -->
+  <button (click)="decUnits(articulo)" class="btn btn-outline-primary">-</button>
+  <!-- INPUT NO EDITABLE PARA MOSTRAR UNIDADES -->
+  <input type="text" class="form-control" disabled value="{{articulo.units}}">
+  <!-- BOTÓN PARA INCREMENTAR UNIDADES -->
+  <button (click)="addUnits(articulo)" class="btn btn-outline-primary">+</button>
+  </div>
+  <div>{{articulo.precio * articulo.units | currency:" "}} €</div>
+  <div>
+  <!-- BOTÓN PARA ELIMINAR ESE ARTÍCULO DEL CARRITO -->
+  <button (click)="delUnits(articulo)" class="btn btn-outline-danger">X</button>
+  </div>
+</div>
