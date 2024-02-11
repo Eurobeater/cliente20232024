@@ -1,0 +1,39 @@
+<h1>Quinto componente</h1>
+
+<h3>Ejemplo de Clases, Directiva ngStyle y ngClass</h3>
+<div *ngFor="let empleado of empleados">
+    <p> {{ empleado.nombre }} {{ empleado.apellido }}, <span [ngStyle]="{color: empleado.cargo=='Director' ? 'red' : 'black'}">{{ empleado.cargo }}</span>,
+        {{ empleado.salario }}.</p>
+    <p>Su cargo es: <span [ngClass]="{claseDirector : empleado.cargo == 'Director'}">{{empleado.cargo}}</span></p>
+    <br>
+</div>
+<br>
+<br />
+
+<div class="container">
+  <div class="form-group col-md-3">
+    <label for="nombre">Nombre </label>
+    <input type="text" name="nombre" id="nombre" class="form-control" [(ngModel)]="cuadroNombre"/>
+  </div>
+  <br />
+  <div class="form-group col-md-3">
+    <label for="nombre">Apellidos </label>
+    <input type="text" name="apellidos" id="apellidos" class="form-control" [(ngModel)]="cuadroApellidos"/>
+  </div>
+  <br />
+  <div class="form-group col-md-3">
+    <label for="nombre">Cargo </label>
+    <input type="text" name="cargo" id="cargo" class="form-control" [(ngModel)]="cuadroCargo"/>
+  </div>
+  <br />
+  <div class="form-group col-md-3">
+    <label for="nombre">Salario </label>
+    <input type="number" name="salario" id="salario" class="form-control" [(ngModel)]="cuadroSalario"
+    />
+  </div>
+  <br />
+  <div class="col"></div>
+  <button type="submit" class="btn btn-primary" (click)="agregarEmpleado()">
+    Agregar
+  </button>
+</div>

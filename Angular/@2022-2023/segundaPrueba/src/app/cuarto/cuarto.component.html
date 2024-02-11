@@ -1,0 +1,25 @@
+<h1>Cuarto componente</h1>
+<h3>Ejemplo de Directivas</h3>
+
+<h4>ngIf</h4>
+
+Nombre <input type="text" [(ngModel)]="nombre" /> <br />
+Apellidos <input type="text" [(ngModel)]="apellidos" /><br /><br />
+<input type="submit" value="Enviar" (click)="registrarUsuario()" />
+
+<br />
+<br />
+<p *ngIf="registrado; else sinRegistrar">{{ mensaje }} a nombre de {{ nombre }} {{ apellidos }}</p>
+
+<ng-template #sinRegistrar>
+    <p>No hay nadie registrado</p>
+</ng-template>
+
+<br>
+
+<h4>ngFor</h4>
+<ul>
+    <li *ngFor="let entrada of entradas">{{entrada.titulo}}</li>
+</ul>
+
+<br />
