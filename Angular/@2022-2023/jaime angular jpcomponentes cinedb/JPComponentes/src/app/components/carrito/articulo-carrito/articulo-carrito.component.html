@@ -1,0 +1,16 @@
+<div class="row row-cols-md-5">
+    <div>
+        <img class="img-thumbnail float-start" [src]="articuloCarrito.imagen">
+        {{articuloCarrito.nombre}}
+    </div>
+    <div>{{articuloCarrito.precio | currency : 'EUR' : 'symbol'}}</div>
+    <div>
+    <input type="text" value="{{articuloCarrito.cantidad}}" disabled>
+    <button class="btn btn-primary" (click)="incrementsUnits(articuloCarrito)">+</button>
+    <button class="btn btn-danger" (click)="decrementsUnits(articuloCarrito)">-</button>
+    </div>
+    <div>{{getPrice(articuloCarrito) | currency : 'EUR' : 'symbol'}}</div>
+    <div>
+      <button class="btn btn-danger" (click)="removeFromCart(articuloCarrito)">Eliminar</button>
+    </div>
+</div>

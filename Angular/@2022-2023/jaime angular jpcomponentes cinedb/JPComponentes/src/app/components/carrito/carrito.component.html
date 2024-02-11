@@ -1,0 +1,12 @@
+<h3>Carrito</h3>
+
+<div class="row row-cols-md-1">
+    <app-articulo-carrito *ngFor="let v of getCart()" [articuloCarrito]="v"></app-articulo-carrito>
+    <div class="row row-cols-md-5 cartPrice">
+        <div></div>
+        <div></div>
+        <div>Total:{{getCart().length}}</div>
+        <div>{{TotalPrice | currency : 'EUR' : 'symbol'}}</div>
+        <div></div>
+    </div>
+</div>
