@@ -1,0 +1,6 @@
+openweather apikey: 28ad8111640206dd8fd8c96578e64ee8
+
+https://api.openweathermap.org/data/2.5/find?q=murcia&appid=28ad8111640206dd8fd8c96578e64ee8
+
+Murcia: https://api.openweathermap.org/data/2.5/weather?id=2513413&appid=28ad8111640206dd8fd8c96578e64ee8
+
