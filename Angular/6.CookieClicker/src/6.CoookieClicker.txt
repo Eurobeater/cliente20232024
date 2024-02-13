@@ -1,0 +1,36 @@
+private upgrades:any[] = []
+
+  constructor() {
+    let upgradesNewGame:any[] = [
+      {
+        name: "Cursor",
+        numberOf: 0,
+        price: 15,
+        perSecond: 0.1
+      },
+      {
+        name: "Grandma",
+        numberOf: 0,
+        price: 100,
+        perSecond: 1.0
+      },
+      {
+        name: "Farm",
+        numberOf: 0,
+        price: 1100,
+        perSecond: 8.0
+      },
+      {
+        name: "Mine",
+        numberOf: 0,
+        price: 12000,
+        perSecond: 47.0
+      },
+      {
+        name: "Factory",
+        numberOf: 0,
+        price: 130000,
+        perSecond: 260.0
+      }
+    ]
+}
