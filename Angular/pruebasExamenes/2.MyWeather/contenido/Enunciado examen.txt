@@ -1,0 +1,54 @@
+Enunciado MyWeather
+
+Weather app
+
+Desarrollar una aplicación web para consultar el tiempo meteorológico actual de cualquier ciudad del mundo.
+
+Tecnologías a usar:
+	HTML/CSS
+	Javascript/jQuery
+	AJAX y comunicación JSON con API
+	
+No es necesario usar PHP/MySQL ya que se consultan datos en la API externa
+
+
+Aspectos que se deben completar:
+
+	La aplicación permitirá al usuario:
+		buscar ciudades en la API
+		añadir ciudades a la lista personalizada de ciudades del usuario
+		seleccionar una ciudad de dicha lista para mostrar su clima actualizado
+		borrar ciudades de la lista personalizada
+		
+		
+	De la ciudad seleccionada, la aplicación mostrará los siguientes datos:
+		nombre
+		temperatura actual
+		máxima y mínima del día
+		estado del cielo
+		humedad
+		velocidad y dirección del viento
+		coordenadas
+		
+	La aplicación será responsive. Si se visualiza en ordenador se verá el tiempo de todas las ciudades de la lista.
+	Si se visualiza en teléfono se verá únicamente el tiempo de la ciudad seleccionada.
+	
+(por decidir)
+
+Sobre la API
+
+Para registrarse y conseguir la API key:
+
+	https://openweathermap.org/appid
+
+	Buscar ciudades por patrón:
+
+		https://openweathermap.org/current#name
+
+	Consultar el tiempo por ID de la ciudad:
+
+		https://openweathermap.org/current#cityid
+
+	Ejemplo de respuesta JSON de la API:
+
+		https://openweathermap.org/current#parameter
