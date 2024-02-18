@@ -1,0 +1,53 @@
+<div class="row">
+  @if (peliculaDetalles) {
+  <div class="col-7">
+      <dl>
+          <dt>Título</dt>
+          <dd>{{peliculaDetalles.Title}}</dd>
+      </dl>
+      <dl>
+          <dt>Año</dt>
+          <dd>{{peliculaDetalles.Year}}</dd>
+      </dl>
+      <dl>
+          <dt>Duración</dt>
+          <dd>{{peliculaDetalles.Runtime}}</dd>
+      </dl>
+      <dl>
+          <dt>Géneros</dt>
+          <dd>{{peliculaDetalles.Genre}}</dd>
+      </dl>
+      <dl>
+          <dt>Dirección</dt>
+          <dd>{{peliculaDetalles.Director}}</dd>
+      </dl>
+      <dl>
+          <dt>Reparto</dt>
+          <dd>{{peliculaDetalles.Actors}}</dd>
+      </dl>
+      <dl>
+          <dt>Sinopsis</dt>
+          <dd>{{peliculaDetalles.Plot}}</dd>
+      </dl>
+      <dl>
+          <dt>País</dt>
+          <dd>{{peliculaDetalles.Country}}</dd>
+      </dl>
+      <dl>
+          <dt>Enlace a IMDB</dt>
+          <dd><a href="peliculaDetalles.Website" target="_blank">{{peliculaDetalles.Title}}</a></dd>
+      </dl>
+      <dl>
+          <dt>Puntuación de IMDB</dt>
+          <dd>{{peliculaDetalles.Rated}}</dd>
+      </dl>
+
+      <p>
+          <button routerLink="/favs" type="button" class="btn btn-primary">Volver a Favoritos</button>
+      </p>
+  </div>
+  <div class="col-5">
+      <img src="{{peliculaDetalles.Poster}}" class="card-img-top">
+  </div>
+}
+</div>
