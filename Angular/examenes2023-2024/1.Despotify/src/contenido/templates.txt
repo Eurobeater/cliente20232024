@@ -1,0 +1,178 @@
+******************************************************************************************************************
+
+HEADER
+
+<div class="row">
+  <div class="col-lg-2" id="logo"><img width="160" src=""></div>
+  <div class="col-lg-10" id="titulo">
+      <h1>Despotify</h1>
+  </div>
+</div>
+
+#logo,#titulo {
+  background-color: rgb(240, 240, 240);
+  align-content: left;
+}
+#titulo>h1 {
+  font-size: 72px;
+  text-align: left;
+}
+
+******************************************************************************************************************
+
+NAVEGACION
+
+<div class="row">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Songs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Playlists</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+******************************************************************************************************************
+
+FOOTER
+
+<div class="row" id="pie">
+  <div class="col-lg-6">
+      <h3>Author: <!-- PON TU NOMBRE AQUÍ --></h3>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+      </a>
+      <br />
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+  </div>
+  <div class="col-lg-6">
+      <h3>Songs' data extracted from Spotify.com</h3>
+      <a href="https://www.spotify.com" target="_blank">Visit Spotify.com</a>
+  </div>
+</div>
+
+#pie {
+  background-color: rgb(218, 255, 235);
+  margin-top: 1cm;
+}
+
+******************************************************************************************************************
+
+TARJETA DE CANCIÓN
+
+<div class="card text-center bg-light mb-2 mr-2">
+  <div class="card-body">
+      <h5 class="card-title">"<!-- TITULO -->"</h5>
+      <span><!-- ARTISTA --></span>
+      <p class="card-text"><!-- DURACION --></p>
+      <button type="button" class="btn btn-outline-info">Add to playlist</button>
+  </div>
+</div>
+
+
+******************************************************************************************************************
+
+FILA DE CANCIÓN
+
+<li class="list-group-item">
+  <div class="row row-cols-md-4">
+    <div>
+        <h5>"<!-- TITULO -->"</h5>
+    </div>
+    <div><!-- ARTISTA --></div>
+    <div><!-- DURACION --></div>
+    <div>
+      <button type="button" class="btn btn-outline-info">Add to playlist</button>
+    </div>
+  </div>
+</li>
+
+******************************************************************************************************************
+
+HOME
+
+<h3>Some statistics about our database:</h3>
+<ul class="list-group">
+  <li class="list-group-item">Number of songs: </li>
+  <li class="list-group-item">Number of playlists: </li>
+  <li class="list-group-item">Average number of songs in playlists: </li>
+  <li class="list-group-item">Number of artists: </li>
+  <li class="list-group-item">Top song by length: </li>
+  <li class="list-group-item">(ADVANCED) Top artist by songs: </li>
+</ul>
+<h5>Artists ordered by number of songs</h5>
+<ul class="list-group">
+  <!-- (ADVANCED) LISTADO DE ARTISTAS ORDENADO DE MAYOR A MENOR NÚMERO DE CANCIONES EN LA BD -->
+</ul>
+
+******************************************************************************************************************
+
+LISTADO CANCIONES CON BUSCADOR Y SWITCH
+
+<div class="row">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="search by title or artist..."
+                aria-label="search by title or artist" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-info" type="button">
+                Search
+            </button>
+        </div>
+    </div>
+</div>
+
+<ng-container >
+    <div class="row">
+      <div class="col-lg-3">
+        <h3>Songs</h3>
+      </div>
+      <div class="col-lg-9 form-switch form-check-reverse">
+        <input class="form-check-input" type="checkbox" mdbCheckbox role="switch" id="flexSwitchCheckChecked" [checked]="true">
+        <label class="form-check-label" for="flexSwitchCheckChecked">Toggle card/rows views</label>
+      </div>
+    </div>
+    <div class="row">
+      <ng-template #thereAreSongs>
+        <!-- Songs in cards view -->
+        <div class="row row-cols-md-5">
+          <!-- LISTADO DE CANCIONES TARJETA -->
+        </div>
+        <!-- Songs in rows view -->
+        <ng-template #rowView>
+          <ul class="list-group">
+          	<!-- LISTADO DE CANCIONES FILA -->
+          </ul>
+        </ng-template>
+      </ng-template>
+    </div>
+</ng-container>
+
+
+******************************************************************************************************************
+
+LISTADO DE PLAYLISTS
+
+<h3>Playlists:</h3>
+<ul class="list-group">
+  <!-- LISTADO DE PLAYLISTS -->
+</ul>
+
+******************************************************************************************************************
+
+PLAYLIST BLOQUE
+
+<li class="list-group-item">
+  <h5>Playlist: <!-- Nombre de lista --></h5>
+  <h6>Author: <!-- Autor de la lista --></h6>
+  <h6>Songs: <!-- lista de IDs de canciones separadas por coma --></h6>
+</li>

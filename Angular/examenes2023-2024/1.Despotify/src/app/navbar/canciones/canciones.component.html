@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="search by title or artist..."
+              aria-label="search by title or artist" aria-describedby="basic-addon2" [(ngModel)]="patron" >
+      <div class="input-group-append">
+          <button class="btn btn-info" type="button">
+              Search
+          </button>
+      </div>
+  </div>
+</div>
+
+<ng-container >
+  <div class="row">
+    <div class="col-lg-3">
+      <h3>Songs</h3>
+    </div>
+    <div class="col-lg-9 form-switch form-check-reverse">
+      <input class="form-check-input" type="checkbox" mdbCheckbox role="switch" id="flexSwitchCheckChecked" [checked]="true" (click)="toggleView()" >
+      <label class="form-check-label" for="flexSwitchCheckChecked">Toggle card/rows views</label>
+    </div>
+  </div>
+  <div class="row">
+    @if (vistaTarjetas) {
+      <!-- Songs in cards view -->
+      <div class="row row-cols-md-5">
+        @for (cancion of getCanciones() | filtroPatron:patron; track cancion.id) {
+        <!-- LISTADO DE CANCIONES TARJETA -->
+        <app-tarjeta-cancion [cancion] = "cancion"></app-tarjeta-cancion>
+      }
+      </div>
+    }@else {
+      <!-- Songs in rows view -->
+        <ul class="list-group">
+          @for (cancion of getCanciones() | filtroPatron:patron; track cancion.id) {
+          <!-- LISTADO DE CANCIONES FILA -->
+          <app-fila-cancion [cancion] = "cancion"></app-fila-cancion>
+        }
+        </ul>
+      }
+  </div>
+
+</ng-container>

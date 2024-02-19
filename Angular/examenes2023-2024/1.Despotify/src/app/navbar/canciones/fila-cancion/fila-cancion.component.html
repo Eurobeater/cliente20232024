@@ -1,0 +1,12 @@
+<li class="list-group-item">
+  <div class="row row-cols-md-4">
+    <div>
+        <h5>"{{cancion.title}}"</h5>
+    </div>
+    <div>{{cancion.artist}}</div>
+    <div>{{cancion.length | TiempoPipe }}</div>
+    <div>
+      <button type="button" class="btn btn-outline-info" (click)="addToPlaylist(cancion)">Add to playlist</button>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,8 @@
+<div class="card text-center bg-light mb-2 mr-2">
+  <div class="card-body">
+      <h5 class="card-title">"{{cancion.title}}"</h5>
+      <span>{{cancion.artist}}</span>
+      <p class="card-text">{{cancion.length | TiempoPipe }}</p>
+      <button type="button" class="btn btn-outline-info" (click)="addToPlaylist(cancion)" >Add to playlist</button>
+  </div>
+</div>
